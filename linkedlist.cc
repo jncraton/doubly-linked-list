@@ -69,5 +69,7 @@ int main() {
   ll.insert(2, 200);
   assert(("Insert 200 at index 2", ll.get(2) == 200));
 
+  std::println("All tests passed");
+
   return 0;
 }
