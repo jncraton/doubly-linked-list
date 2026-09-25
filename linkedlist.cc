@@ -69,6 +69,40 @@ int main() {
   ll.insert(2, 200);
   assert(("Insert 200 at index 2", ll.get(2) == 200));
 
+  LinkedList ll2;
+  ll2.append(10);
+  ll2.pop();
+  assert(("Pop from single item list", ll2.head == nullptr));
+
+  ll2.append(20);
+  ll2.pop();
+  assert(("Pop from single item list again", ll2.head == nullptr));
+
+  try {
+    ll2.get(0);
+    assert(false && "Should have thrown out_of_range");
+  } catch (const std::out_of_range &e) {
+  }
+
+  ll2.append(30);
+  ll2.append(40);
+  ll2.insert(1, 35);
+  assert(("Insert in middle", ll2.get(0) == 30));
+  assert(("Insert in middle", ll2.get(1) == 35));
+  assert(("Insert in middle", ll2.get(2) == 40));
+
+  try {
+    ll2.insert(10, 100);
+    assert(false && "Should have thrown out_of_range");
+  } catch (const std::out_of_range &e) {
+  }
+
+  try {
+    ll2.insert(-1, 100);
+    assert(false && "Should have thrown out_of_range");
+  } catch (const std::out_of_range &e) {
+  }
+
   std::println("All tests passed");
 
   return 0;
