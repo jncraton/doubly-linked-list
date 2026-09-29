@@ -28,6 +28,7 @@ Generally, your linked list semantics should match those of a Python `List`.
 2. Implement `get` (this should match Python's `__getitem__`)
 3. Implement `pop` (only the simple case with no arguments)
 4. Implement `insert`
+5. Implement deconstructor.
 
 ## Resources
 

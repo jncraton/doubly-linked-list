@@ -5,16 +5,21 @@
 class Node {
 public:
   Node *next;
+  Node *prev;
   int data;
 
-  Node(int data, Node *next = nullptr) : data(data), next(next) {}
+  Node(int data, Node *next = nullptr, Node *prev = nullptr) : data(data), next(next), prev(prev) {}
 };
 
 class LinkedList {
 public:
   Node *head;
+  Node *tail;
 
-  LinkedList() { head = nullptr; }
+  LinkedList() : head(nullptr), tail(nullptr) {}
+
+  ~LinkedList() {
+  }
 
   void append(int data) {
   }
@@ -40,6 +45,7 @@ int main() {
   ll.append(2);
   assert(("First item untouched", ll.head->data == 1));
   assert(("Second item appended", ll.head->next->data == 2));
+  assert(("Tail is correct", ll.tail->data == 2));
 
   assert(("Get first item", ll.get(0) == 1));
   assert(("Get second item", ll.get(1) == 2));
@@ -53,9 +59,11 @@ int main() {
   ll.pop();
   assert(("Pop last item", ll.head->next == nullptr));
   assert(("Get first item after pop", ll.get(0) == 1));
+  assert(("Tail is correct after pop", ll.tail->data == 1));
 
   ll.pop();
   assert(("Pop first item", ll.head == nullptr));
+  assert(("Tail is null after pop", ll.tail == nullptr));
 
   ll.append(1);
   ll.append(2);
