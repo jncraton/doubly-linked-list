@@ -35,6 +35,9 @@ public:
   }
 
   void insert(int index, int data) {
+
+  int length() const {
+    return 0;
   }
 };
 
