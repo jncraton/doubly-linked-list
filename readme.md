@@ -1,16 +1,16 @@
-# Linked List
+# Doubly Linked List
 
-![Linked list](https://upload.wikimedia.org/wikipedia/commons/6/6d/Singly-linked-list.svg)
+![Doubly linked list](https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Doubly-linked-list.svg/960px-Doubly-linked-list.svg.png)
 
-A C++ project to build and test a [linked list](https://en.wikipedia.org/wiki/Linked_list) implementation.
+A C++ project to build and test a [doubly linked list](https://en.wikipedia.org/wiki/Doubly_linked_list) implementation.
 
 ## Learning Outcomes
 
 After completing this experience, learners will be able to:
 
-1. Implement a [singly-linked list](https://en.wikipedia.org/wiki/Linked_list#Singly_linked_list)
+1. Implement a [doubly-linked list](https://en.wikipedia.org/wiki/Doubly_linked_list)
 2. Use classes in C++
-3. Describe the benefits of dynamic and static lists
+3. Describe the benefits of `previous` pointers in doubly linked lists
 
 ## Testing
 
@@ -32,4 +32,4 @@ Generally, your linked list semantics should match those of a Python `List`.
 ## Resources
 
 - [Python Lists](https://docs.python.org/3/tutorial/datastructures.html#more-on-lists)
-- [Singly Linked Lists](https://en.wikipedia.org/wiki/Linked_list#Singly_linked_list)
+- [Doubly Linked Lists](https://en.wikipedia.org/wiki/Doubly_linked_list)
