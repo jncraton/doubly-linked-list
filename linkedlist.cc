@@ -44,11 +44,13 @@ void test() {
   ll.append(1);
   assert(("List has content", ll.head != nullptr));
   assert(("Single item appended", ll.head->data == 1));
+  assert(("Length is 1", ll.length() == 1));
 
   ll.append(2);
   assert(("First item untouched", ll.head->data == 1));
   assert(("Second item appended", ll.head->next->data == 2));
   assert(("Tail is correct", ll.tail->data == 2));
+  assert(("Length is 2", ll.length() == 2));
 
   assert(("Get first item", ll.get(0) == 1));
   assert(("Get second item", ll.get(1) == 2));
@@ -63,10 +65,12 @@ void test() {
   assert(("Pop last item", ll.head->next == nullptr));
   assert(("Get first item after pop", ll.get(0) == 1));
   assert(("Tail is correct after pop", ll.tail->data == 1));
+  assert(("Length after pop", ll.length() == 1));
 
   ll.pop();
   assert(("Pop first item", ll.head == nullptr));
   assert(("Tail is null after pop", ll.tail == nullptr));
+  assert(("Length after pop all", ll.length() == 0));
 
   ll.append(1);
   ll.append(2);
@@ -74,20 +78,24 @@ void test() {
   assert(("Insert 0 at index 0", ll.get(0) == 0));
   assert(("Insert 1 at index 1", ll.get(1) == 1));
   assert(("Insert 2 at index 2", ll.get(2) == 2));
+  assert(("Length after inserts", ll.length() == 3));
 
   ll.insert(1, 100);
   assert(("Insert 100 at index 1", ll.get(1) == 100));
   ll.insert(2, 200);
   assert(("Insert 200 at index 2", ll.get(2) == 200));
+  assert(("Length after more inserts", ll.length() == 5));
 
   LinkedList ll2;
   ll2.append(10);
   ll2.pop();
   assert(("Pop from single item list", ll2.head == nullptr));
+  assert(("Length is 0", ll2.length() == 0));
 
   ll2.append(20);
   ll2.pop();
   assert(("Pop from single item list again", ll2.head == nullptr));
+  assert(("Length is 0 again", ll2.length() == 0));
 
   try {
     ll2.get(0);
@@ -101,6 +109,7 @@ void test() {
   assert(("Insert in middle", ll2.get(0) == 30));
   assert(("Insert in middle", ll2.get(1) == 35));
   assert(("Insert in middle", ll2.get(2) == 40));
+  assert(("Length is 3", ll2.length() == 3));
 
   try {
     ll2.insert(10, 100);
@@ -119,6 +128,7 @@ void test() {
     ll3.append(1);
     ll3.append(2);
     ll3.append(3);
+    assert(("Length is 3", ll3.length() == 3));
   }
 }
 
