@@ -4,11 +4,14 @@
 
 class Node {
 public:
+  static inline int live_count = 0;
+  
   Node *next;
   Node *prev;
   int data;
 
-  Node(int data, Node *next = nullptr, Node *prev = nullptr) : data(data), next(next), prev(prev) {}
+  Node(int data, Node *next = nullptr, Node *prev = nullptr) : data(data), next(next), prev(prev) {++live_count;}
+  ~Node() {--live_count;}
 };
 
 class LinkedList {
@@ -35,7 +38,7 @@ public:
   }
 };
 
-int main() {
+void test() {
   LinkedList ll;
 
   ll.append(1);
@@ -111,6 +114,18 @@ int main() {
   } catch (const std::out_of_range &e) {
   }
 
+  {
+    LinkedList ll3;
+    ll3.append(1);
+    ll3.append(2);
+    ll3.append(3);
+  }
+}
+
+int main() {
+  test();
+
+  assert(("All nodes deleted", Node::live_count == 0));
   std::println("All tests passed");
 
   return 0;
