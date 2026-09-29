@@ -9,7 +9,7 @@ A C++ project to build and test a [doubly linked list](https://en.wikipedia.org/
 After completing this experience, learners will be able to:
 
 1. Implement a [doubly-linked list](https://en.wikipedia.org/wiki/Doubly_linked_list)
-2. Use classes in C++
+2. Avoid memory leaks in C++ programs
 3. Describe the benefits of `previous` pointers in doubly linked lists
 
 ## Testing
@@ -24,11 +24,12 @@ make
 
 Generally, your linked list semantics should match those of a Python `List`.
 
-1. Implement `append`
-2. Implement `get` (this should match Python's `__getitem__`)
-3. Implement `pop` (only the simple case with no arguments)
-4. Implement `insert`
-5. Implement deconstructor.
+1. Implement `length`
+2. Implement `append`
+3. Implement `get` (this should match Python's `__getitem__`)
+4. Implement `pop` (only the simple case with no arguments)
+5. Implement `insert`
+6. Implement deconstructor.
 
 ## Resources
 
